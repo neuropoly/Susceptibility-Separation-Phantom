@@ -77,10 +77,10 @@ segmented_model_file = 'data/masks/SegmentedModel.nii.gz';
 chi_negative_file = 'data/chimodel/Chi_negative.nii.gz'; 
 Chi_positive_file='data/chimodel/Chi_positive.nii.gz';
 % Output:
-%deltaX_file = 'data/chimodel/delta_X.nii.gz';
-%Xzero_file = 'data/chimodel/X_zero.nii.gz';
-%Xapp_file = 'data/chimodel/Xapp.nii.gz';
-%Xapp_weighted_file = 'data/chimodel/Xapp_weighted.nii.gz';
+deltaX_file = 'data/chimodel/delta_X.nii.gz';
+Xzero_file = 'data/chimodel/X_zero.nii.gz';
+Xapp_file = 'data/chimodel/Xapp.nii.gz';
+Xapp_weighted_file = 'data/chimodel/Xapp_weighted.nii.gz';
 Chi_negative_with_anisotropy_file = 'data/chimodel/Chi_negative_with_anisotropy.nii.gz';
 Chi_with_anisotropy_file = 'data/chimodel/Chi_with_anisotropy.nii.gz';
 
@@ -102,11 +102,11 @@ for region = 1:11
 end
 
 % Save delta X and Xzero maps as NIfTI files
-%delta_X_img = make_nii(delta_X_map, img.hdr.dime.pixdim(2:4), [], 64);
-%Xzero_img = make_nii(Xzero_map, img.hdr.dime.pixdim(2:4), [], 64);
+delta_X_img = make_nii(delta_X_map, img.hdr.dime.pixdim(2:4), [], 64);
+Xzero_img = make_nii(Xzero_map, img.hdr.dime.pixdim(2:4), [], 64);
 
-%save_nii(delta_X_img, deltaX_file);
-%save_nii(Xzero_img, Xzero_file);
+save_nii(delta_X_img, deltaX_file);
+save_nii(Xzero_img, Xzero_file);
 
 % Load the delta X and Xzero maps
 deltaX_img = load_untouch_nii(deltaX_file);
@@ -122,8 +122,8 @@ theta_data = double(theta_img.img);
 Xapp_data = deltaX_data .* ((cos(theta_data * pi / 180)) .^ 2) + Xzero_data;
 
 % Save the Xapp map as a NIfTI file
-%Xapp_img = make_nii(Xapp_data, deltaX_img.hdr.dime.pixdim(2:4), [], 64);
-%save_nii(Xapp_img, Xapp_file);
+Xapp_img = make_nii(Xapp_data, deltaX_img.hdr.dime.pixdim(2:4), [], 64);
+save_nii(Xapp_img, Xapp_file);
 
 % Load the R1 map and segmented model
 R1_img = load_untouch_nii(R1_file);
