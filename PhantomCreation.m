@@ -167,7 +167,7 @@ chi_negative_data = double(chi_negative_img.img);
 
 % Replace region 8 in Chi_negative with Xapp_with_R1_mask_in_region_8_3.nii.gz
 chi_negative_data(segmentation_data == region_id) = Xapp_masked_data(segmentation_data == region_id);
-
+chi_negative_data(isnan(chi_negative_data))=0;
 
 % Save the modified Chi_negative image
 chi_negative_modified_img = make_nii(chi_negative_data, chi_negative_img.hdr.dime.pixdim(2:4), [], 64);
