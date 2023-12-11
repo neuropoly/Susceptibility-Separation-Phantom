@@ -29,8 +29,27 @@ $$
 
 where $\bar{\chi}^{\pm}_ {\text{tissue}}$ are the values from Table 1, $R_{1}$ and $R^{\*}_ {2}$  are the longitudinal and observed transverse relaxation maps with $\bar{R}_ {1}$  and $\bar{R}^{\*}_ {2}$  being their mean value for a given brain region and $a_{\text{tissue}}$ and $b_{\text{tissue}}$ are weighting factors. 
 Our custom phantom offers the possibility of including WM’s susceptibility anisotropy by modeling -  as:
-                                                                    (||-⊥) cos2θ+0
-where || and ⊥ are the susceptibility of myelinated fibers along and perpendicular to their principal axis, θ is the fiber-to-field angle, and 0 represents any orientation-independent susceptibility. ||, ⊥, and 0 maps were generated from literature values5–7 (Table 2) that were subsequently weighted using the R1 map and subjected to Gaussian noise in order to add texture to the tissue regions.
+
+$$
+(\chi_{||} - \chi_{\perp}) \cos^2 \theta + \chi_{0}
+$$
+
+Where $\chi_{||}$ and $\chi_{\perp}$ are the susceptibility of myelinated fibers along and perpendicular to their principal axis, $\theta$ is the fiber-to-field angle, and $\chi_{0}$ represents any orientation-independent susceptibility. $\chi_{||}$, $\chi_{\perp}$, and $\chi_{0}$ maps were generated from literature values $^{5–7}$ (Table 2) that were subsequently weighted using the $R_{1}$ map and subjected to Gaussian noise in order to add texture to the tissue regions.
+
+| Region                                  | $\delta\chi(\chi_{\|\|} - \chi_{\perp})$ | $\chi_{0}$  | 
+| --------------------------------------- | -------------------------------------    | ----------- | 
+| Body of the corpus callosum             | 0.032                                    |-0.0512      |
+| Splenium of the corpus callosum         | 0.024                                    | -0.0522      |
+| Genu of the corpus callosum             | 0.014                                    | -0.0382     | 
+| Anterior limb of the internal capsule   | 0.016                                      | -0.0512     | 
+| Posterior thalamic radiations           | 0.016                                    | -0.0592      |
+| Superior corona radiata                 | 0.005                                    | -0.0442      | 
+| Posterior corona radiata                | 0.008                                     | -0.0542      | 
+| Anterior corona radiata                 | 0.006                                    | -0.0462      | 
+| Posterior limb of the internal capsule  | -0.015                                     | -0.0382      |
+| Superior longitudinal fascicle          | -0.015                                    | -0.0372      |
+
+
 Table 2:  Simulated average anisotropy values, δχ (χ॥-χ⊥), and isotropic susceptibility, χ0, derived from the literature for different white matter regions.
 
 Finally, our phantom allows us to simulate a transversal relaxation time R2 map (1/T2). This map was also simulated based on literature values8,9 (Table 3) and then weighed using R2* and M0 to create realistic tissue textures.
