@@ -28,7 +28,7 @@ $$
 
 
 where $\bar{\chi}^{\pm}_ {\text{tissue}}$ are the values from Table 1, $R_{1}$ and $R^{\*}_ {2}$  are the longitudinal and observed transverse relaxation maps with $\bar{R}_ {1}$  and $\bar{R}^{\*}_ {2}$  being their mean value for a given brain region and $a_{\text{tissue}}$ and $b_{\text{tissue}}$ are weighting factors. 
-Our custom phantom offers the possibility of including WM’s susceptibility anisotropy by modeling -  as:
+Our custom phantom offers the possibility of including WM’s susceptibility anisotropy by modeling $\chi^-$ as:
 
 $$
 (\chi_{||} - \chi_{\perp}) \cos^2 \theta + \chi_{0}
