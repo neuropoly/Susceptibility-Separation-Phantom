@@ -36,7 +36,7 @@ $$
 
 Where $\chi_{||}$ and $\chi_{\perp}$ are the susceptibility of myelinated fibers along and perpendicular to their principal axis, $\theta$ is the fiber-to-field angle, and $\chi_{0}$ represents any orientation-independent susceptibility. $\chi_{||}$, $\chi_{\perp}$, and $\chi_{0}$ maps were generated from literature values $^{5–7}$ (Table 2) that were subsequently weighted using the $R_{1}$ map and subjected to Gaussian noise in order to add texture to the tissue regions.
 
-| Region                                  | $\delta\chi(\chi_{\|\|} - \chi_{\perp})$ | $\chi_{0}$  | 
+| Region                                  | $\delta\chi(\chi_{\|\|} - \chi_{\perp}) (ppm)$ | $\chi_{0} (ppm)$  | 
 | --------------------------------------- | -------------------------------------    | ----------- | 
 | Body of the corpus callosum             | 0.032                                    |-0.0512      |
 | Splenium of the corpus callosum         | 0.024                                    | -0.0522      |
@@ -50,20 +50,35 @@ Where $\chi_{||}$ and $\chi_{\perp}$ are the susceptibility of myelinated fibers
 | Superior longitudinal fascicle          | -0.015                                    | -0.0372      |
 
 
-Table 2:  Simulated average anisotropy values, δχ (χ॥-χ⊥), and isotropic susceptibility, χ0, derived from the literature for different white matter regions.
+**Table 2:**  Simulated average anisotropy values, $\delta\chi(\chi_{\|\|} - \chi_{\perp})$, and isotropic susceptibility, $\chi_{0}$, derived from the literature for different white matter regions.
 
-Finally, our phantom allows us to simulate a transversal relaxation time R2 map (1/T2). This map was also simulated based on literature values8,9 (Table 3) and then weighed using R2* and M0 to create realistic tissue textures.
-Table 3:  Simulated average T2 values derived from the literature for different regions of the brain.
+Finally, our phantom allows us to simulate a transversal relaxation time $R_2$ map $(1/T_2)$. This map was also simulated based on literature values $^{8,9}$ (Table 3) and then weighed using $R^{\*}_ {2}$ and $M_0$ to create realistic tissue textures.
 
 
-Gradient echo simulation
+| Region           | $T_2$ (ms) |
+| ---------------- | --------------------- | 
+| Caudate nucleus  | 57.46               | 
+| Globus pallidus  | 41.47                |
+| Putamen          | 50.44                | 
+| Red nucleus      | 44.07                  | 
+| Dentate nucleus   | 71.71                | 
+| Substantia nigra | 47.26                | 
+| Thalamus         | 56.62                 | 
+| White matter     | 45.54                | 
+| Grey matter      | 84.71                 | 
+| CSF              | 1029                | 
+
+**Table 3:**  Simulated average $T_2$ values derived from the literature for different regions of the brain.
+
+
+### Gradient echo simulation:
 The created phantom can be used to simulate gradient-echo (GRE) data using the following equation:
  
+$$S=M_0\sin(\alpha)\frac{1-e^{-TRR_1}}{1-\cos(\alpha)e^{-TRR_1}}e^{-TE(R_2+D_r(|\chi^+|+|\chi^-|))+i(\Phi_0+2\pi{\gamma}TEB_0(D(\chi^++\chi^-)))}$$
 
+where D is the magnetic dipole kernel, $\alpha$ is the flip angle, TR is the repetition time, TE is the echo time, $\Phi_0$ is a phase offset, $M_0$ is the net magnetization, $B_0$ is the field strength, $$\gamma is the gyromagnetic ratio, and $D_r$ maps represents the proportionality between $R^{\'}_ {2}$ $(=R^{\*}_ {2}-R_ 2)$ and absolute susceptibility. $D_r$ was modeled as $$$\tfrac{2\pi}{9\sqrt{3}}\{gamma}B_0$$$ in gray matter and as $$$\tfrac{1}{2}\gamma B_0sin^2(\theta)$$$ in white matter.
 
-where D is the magnetic dipole kernel, α is the flip angle, TR is the repetition time, TE is the echo time, Φ0 is a phase offset, M0 is the net magnetization, B0 is the field strength, γ is the gyromagnetic ratio, and Dr maps represents the proportionality between R2’ (=R2*-R2) and absolute susceptibility. Dr was modeled as 2πγB0/9√3 in gray matter and as ½ γB0 sin2(θ) in white matter.
-
-The phantom and accompanying code can be used to simulate MR signals and evaluate various magnetic susceptibility-separation techniques, such as χ-separation10, APART-QSM11, or DECOMPOSE QSM12.
+The phantom and accompanying code can be used to simulate MR signals and evaluate various magnetic susceptibility-separation techniques, such as $\chi$-separation $^{10}$, APART-QSM $^{11}$, or DECOMPOSE QSM $^{12}$.
 
 Requirements:
 
