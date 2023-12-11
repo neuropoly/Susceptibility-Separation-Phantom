@@ -76,23 +76,34 @@ The created phantom can be used to simulate gradient-echo (GRE) data using the f
  
 $$S=M_0\sin(\alpha)\frac{1-e^{-TRR_1}}{1-\cos(\alpha)e^{-TRR_1}}e^{-TE(R_2+D_r(|\chi^+|+|\chi^-|))+i(\Phi_0+2\pi{\gamma}TEB_0(D(\chi^++\chi^-)))}$$
 
-where D is the magnetic dipole kernel, $\alpha$ is the flip angle, TR is the repetition time, TE is the echo time, $\Phi_0$ is a phase offset, $M_0$ is the net magnetization, $B_0$ is the field strength, $$\gamma is the gyromagnetic ratio, and $D_r$ maps represents the proportionality between $R^{\'}_ {2}$ $(=R^{\*}_ {2}-R_ 2)$ and absolute susceptibility. $D_r$ was modeled as $$$\tfrac{2\pi}{9\sqrt{3}}\{gamma}B_0$$$ in gray matter and as $$$\tfrac{1}{2}\gamma B_0sin^2(\theta)$$$ in white matter.
+where D is the magnetic dipole kernel, $\alpha$ is the flip angle, TR is the repetition time, TE is the echo time, $\Phi_0$ is a phase offset, $M_0$ is the net magnetization, $B_0$ is the field strength, $$\gamma is the gyromagnetic ratio, and $D_r$ maps represents the proportionality between $R^{\'}_ {2}$ $(=R^{\*}_ {2}-R_ 2)$ and absolute susceptibility. $D_r$ was modeled as $\tfrac{2\pi}{9\sqrt{3}}{\gamma}B_0$ in gray matter and as $\tfrac{1}{2}\gamma B_0sin^2(\theta)$ in white matter.
 
 The phantom and accompanying code can be used to simulate MR signals and evaluate various magnetic susceptibility-separation techniques, such as $\chi$-separation $^{10}$, APART-QSM $^{11}$, or DECOMPOSE QSM $^{12}$.
 
-Requirements:
+### Requirements:
 
-Susceptibility-separation-phantom repository.
-Matlab license.
- Nifti toolbox. 
-QSM challenge 2.0 repository.
+- Susceptibility-separation-phantom repository.
+- Matlab license.
+-  Nifti toolbox. 
+- QSM challenge 2.0 repository.
 
-Pre-Usage:
+### Pre-Usage:
 
 After downloading the QSM challenge 2.0 repository and this repository, replace the following files from the QSM Challenge 2.0 repository with the corresponding files from this repository:
-In addition, make sure to add these files to the main QSM challenge file directory: Mask.m, Anisotropy.m, T2_star.nii.gz, white_matter_mask.nii.gz.
 
-Usage:
+| QSM Challenge 2.0 version               | Our version               |
+| ----------------                        | ---------------------     | 
+| MacroCreateSusceptibilityPhantom.m   -->| PhantomCreation.m         | 
+| CreateOwnRealisticPhantom.m          \-->| PhantomCreationFunction.m |
+| MacroCreateSimulationData.m          \-->| DataSimulation.m          | 
+| CreateSimulatedData.m                \-->| DataSimulationFunction.m  | 
+| DataSimulation.m                     \-->| GRESimulation.m           | 
+| parameters.mat                       \-->| SusceptibilityValues.mat  | 
+
+
+In addition, make sure to add these files to the main QSM challenge file directory: **Mask.m, Anisotropy.m, T2_star.nii.gz, white_matter_mask.nii.gz**.
+
+### Usage:
 Once you have all of the required files, follow these steps to create positive and negative susceptibility maps and simulate gradient-echo data:
 To create susceptibility phantoms: run PhantomCreation.m 
 This script will create susceptibility phantoms: tot from QSM challenge 2.0 and additionally + and - phantoms with and without anisotropy.  In addition, it will simulate an R2 map (1/T2). This script will also generate spatially variable and constant Dr maps (to include or exclude anisotropy)
