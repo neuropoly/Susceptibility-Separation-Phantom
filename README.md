@@ -105,32 +105,31 @@ In addition, make sure to add these files to the main QSM challenge file directo
 
 ### Usage:
 Once you have all of the required files, follow these steps to create positive and negative susceptibility maps and simulate gradient-echo data:
-To create susceptibility phantoms: run PhantomCreation.m 
-This script will create susceptibility phantoms: tot from QSM challenge 2.0 and additionally + and - phantoms with and without anisotropy.  In addition, it will simulate an R2 map (1/T2). This script will also generate spatially variable and constant Dr maps (to include or exclude anisotropy)
+1) To create susceptibility phantoms: run **PhantomCreation.m** 
+ - This script will create susceptibility phantoms: $\chi^{tot}$ from QSM challenge 2.0 and additionally $\chi^{+}$ and $\chi^{-}$ phantoms with and without anisotropy.  In addition, it will simulate an $R_2$ map $(1/T_2). This script will also generate spatially variable and constant $D_r$ maps (to include or exclude anisotropy)
 
-To simulate GRE magnitude and phase data: run DataSimulation.m
+2) To simulate GRE magnitude and phase data: run **DataSimulation.m**
 When simulating consider checking the input of the Anisotropy.m function
-1) if you want to simulate data with anisotropy select Anisotropy as “true”. 
-2) if you want to simulate without anisotropy select Anisotropy as “ false”.
-Recommendations:
+- if you want to simulate data with anisotropy select **Asotropy** as “true”.
+-  if you want to simulate without anisotropy select **Anisotropy** as “ false”.
+### Recommendations:
  
 1) We recommend using this phantom for validating susceptibility separation algorithms. 
 
 For this you will need the following script:
-CalculateR2prime.m
-Calculate R2’ map from R2 and R2*.
-At this point, an R2 map is already simulated. To obtain an R2* map, we recommend applying a mono-exponential fitting to the simulated magnitude data using qMRLab software. 
+- CalculateR2prime.m: Calculate $R^{\'}_ {2}$ map from $R_2$ and $R^{\*}_ {2}$.
+At this point, an $R_2$ map is already simulated. To obtain an $R^{\*}_ {2}$ map, we recommend applying a mono-exponential fitting to the simulated magnitude data using **qMRLab software**. 
 
-2) To visualize a color-coded white matter fiber orientation map run the script: GenerateRgbMap.m 
+2) To visualize a color-coded white matter fiber orientation map run the script: **GenerateRgbMap.m** 
 
-Results:
+### Results:
 
 All the resulting maps are available in the repository as essential reference points for anyone seeking to reproduce the work.
-Question:
+### Question:
 If you have any questions or encounter issues, please don't hesitate to open an issue, and we will respond as soon as possible to assist you.
 
 
-References:
+### References:
 
 1.	Marques, J. P. et al. QSM reconstruction challenge 2.0: A realistic in silico head phantom for MRI data simulation and evaluation of susceptibility mapping procedures. Magn. Reson. Med. 86, 526–542 (2021).
 2.	Deistung, A. et al. Toward in vivo histology: a comparison of quantitative susceptibility mapping (QSM) with magnitude-, phase-, and R2*-imaging at ultra-high magnetic field strength. Neuroimage 65, 299–314 (2013).
