@@ -52,7 +52,7 @@ Where $\chi_{||}$ and $\chi_{\perp}$ are the susceptibility of myelinated fibers
 
 **Table 2:**  Simulated average anisotropy values, $\delta\chi(\chi_{\|\|} - \chi_{\perp})$, and isotropic susceptibility, $\chi_{0}$, derived from the literature for different white matter regions.
 
-Finally, our phantom allows us to simulate a transversal relaxation time $R_2$ map $(1/T_2)$. This map was also simulated based on literature values $^{8,9}$ (Table 3) and then weighed using $R^{\*}_ {2}$ and $M_0$ to create realistic tissue textures.
+Finally, our phantom allows us to simulate a transversal relaxation time $R_2$ map $\(\frac{1}{T_2}\)$. This map was also simulated based on literature values $^{8,9}$ (Table 3) and then weighed using $R^{\*}_ {2}$ and $M_0$ to create realistic tissue textures.
 
 
 | Region           | $T_2$ (ms) |
@@ -90,23 +90,23 @@ The phantom and accompanying code can be used to simulate MR signals and evaluat
 ### Pre-Usage:
 
 After downloading the QSM challenge 2.0 repository and this repository, replace the following files from the QSM Challenge 2.0 repository with the corresponding files from this repository:
-
-| QSM Challenge 2.0 version               | Our version               |
-| ----------------                        | ---------------------     | 
-| MacroCreateSusceptibilityPhantom.m   -->| PhantomCreation.m         | 
-| CreateOwnRealisticPhantom.m          \-->| PhantomCreationFunction.m |
-| MacroCreateSimulationData.m          \-->| DataSimulation.m          | 
-| CreateSimulatedData.m                \-->| DataSimulationFunction.m  | 
-| DataSimulation.m                     \-->| GRESimulation.m           | 
-| parameters.mat                       \-->| SusceptibilityValues.mat  | 
-
+```
+     QSM Challenge 2.0 version                                      Our version               
+ -------------------------------                                ---------------------      
+ MacroCreateSusceptibilityPhantom.m           ------->            PhantomCreation.m          
+ CreateOwnRealisticPhantom.m                  ------->            PhantomCreationFunction.m 
+ MacroCreateSimulationData.m                  ------->            DataSimulation.m           
+ CreateSimulatedData.m                        ------->            DataSimulationFunction.m   
+ DataSimulation.m                             ------->            GRESimulation.m            
+ parameters.mat                               ------->            SusceptibilityValues.mat   
+```
 
 In addition, make sure to add these files to the main QSM challenge file directory: **Mask.m, Anisotropy.m, T2_star.nii.gz, white_matter_mask.nii.gz**.
 
 ### Usage:
 Once you have all of the required files, follow these steps to create positive and negative susceptibility maps and simulate gradient-echo data:
 1) To create susceptibility phantoms: run **PhantomCreation.m** 
- - This script will create susceptibility phantoms: $\chi^{tot}$ from QSM challenge 2.0 and additionally $\chi^{+}$ and $\chi^{-}$ phantoms with and without anisotropy.  In addition, it will simulate an $R_2$ map $(1/T_2). This script will also generate spatially variable and constant $D_r$ maps (to include or exclude anisotropy)
+ - This script will create susceptibility phantoms: $\chi^{tot}$ from QSM challenge 2.0 and additionally $\chi^{+}$ and $\chi^{-}$ phantoms with and without anisotropy.  In addition, it will simulate an $R_2$ map $\(\frac{1}{T_2}\)$. This script will also generate spatially variable and constant $D_r$ maps (to include or exclude anisotropy)
 
 2) To simulate GRE magnitude and phase data: run **DataSimulation.m**
 When simulating consider checking the input of the Anisotropy.m function
