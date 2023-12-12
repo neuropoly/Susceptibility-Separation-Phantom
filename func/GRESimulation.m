@@ -1,4 +1,4 @@
-function [sigHR] = DataSimulation(SequenceParam,TissueParam)
+function [sigHR] = GRESimulation(SequenceParam,TissueParam)
 %% reading sequence parameters
 
 if isfield(SequenceParam,'TR')
