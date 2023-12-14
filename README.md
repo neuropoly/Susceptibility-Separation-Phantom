@@ -118,7 +118,7 @@ When simulating consider checking the input of the Anisotropy.m function
 
 For this you will need the following script:
 - CalculateR2prime.m: Calculate $R^{\'}_ {2}$ map from $R_2$ and $R^{\*}_ {2}$.
-At this point, an $R_2$ map is already simulated. To obtain an $R^{\*}_ {2}$ map, we recommend applying a mono-exponential fitting to the simulated magnitude data using **qMRLab software**. 
+At this point, an $R_2$ map is already simulated. To obtain an $R^{\*}_ {2}$ map, we recommend applying a mono-exponential fitting to the simulated magnitude data using [**qMRLab software**](https://qmrlab.org/). 
 
 2) To visualize a color-coded white matter fiber orientation map run the script: **GenerateRgbMap.m** 
 
