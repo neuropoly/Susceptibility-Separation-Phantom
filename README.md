@@ -126,7 +126,8 @@ At this point, an $R_2$ map is already simulated. To obtain an $R^{\*}_ {2}$ map
 
 All the resulting maps are available in the repository as essential reference points for anyone seeking to reproduce the work.
 
-![image](https://github.com/neuropoly/Susceptibility-Separation-Phantom/assets/77506715/1cdaa86d-b1dd-4529-b91f-87bfe247ed57)
+![Screenshot 2023-12-17 145333](https://github.com/neuropoly/Susceptibility-Separation-Phantom/assets/77506715/cdc0ed98-ee0e-4a15-938a-2a0491cd6c9d)
+
 
 ### Question:
 If you have any questions or encounter issues, please don't hesitate to open an issue, and we will respond as soon as possible to assist you.
