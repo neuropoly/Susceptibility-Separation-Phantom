@@ -79,7 +79,8 @@ modelname = SimParams.Output_dir ;
             
             SequenceParam.TR=SeqParams.TR;                     
             SequenceParam.TE=TE;                     
-            SequenceParam.theta=SeqParams.FlipAngle;                    
+            SequenceParam.theta=SeqParams.FlipAngle; 
+            TissueParam.B0=SimParams.B0;
             if length(SimParams.Res)==1
                 SequenceParam.res=[1 1 1 ]*SimParams.Res;             
             elseif length(SimParams.Res)==3
@@ -91,7 +92,7 @@ modelname = SimParams.Output_dir ;
             TissueParam.M0=double(M0.img);              
             TissueParam.R1=double(R1.img);                   
             TissueParam.R2star=R2star.img;                 
-            TissueParam.field=field * B0 * gyro*2*pi;                  
+            TissueParam.field=field * SimParams.B0 * gyro*2*pi;                  
             TissueParam.R2=R2.img; 
             TissueParam.Drpos=Drpos.img; 
             TissueParam.Drneg=Drneg.img;
