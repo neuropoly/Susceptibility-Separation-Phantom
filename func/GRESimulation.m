@@ -1,4 +1,4 @@
-function [sigHR] = GRESimulation(SequenceParam,TissueParam)
+function [sigHR] = GRESimulation(SequenceParam,TissueParam,SimParams)
 %% reading sequence parameters
 
 if isfield(SequenceParam,'TR')
@@ -66,11 +66,17 @@ end
 if isfield(TissueParam,'Chineg')
     Chineg=TissueParam.Chineg;
 end
-%% calculating signal at full resolution
-
-sigHR = M0.*(1-exp(-TR.*R1)).*sind(theta)./(1-cosd(theta).*exp(-TR.*R1))...
-.*exp(1i.* (field * TE + PhaseOffset)) .*exp(-TE.*(R2+(Drpos).*abs(Chipos)+(Drneg).*abs(Chineg)));
-sigHR(isnan(sigHR))=0;
+%% calculating signal 
+if SimParams.B0==3 
+    sigHR = (M0.*(1-exp(-TR.*R1*1.54)).*sind(theta)./(1-cosd(theta).*exp(-TR.*R1*1.54))...
+    .*exp(1i.* (field * TE + PhaseOffset)) .*exp(-TE.*(R2*0.65+(Drpos*(3/7)).*abs(Chipos)+(Drneg*(3/7)).*abs(Chineg))));
+    sigHR(isnan(sigHR))=0;
+end 
+if SimParams.B0==7 
+    sigHR = (M0.*(1-exp(-TR.*R1)).*sind(theta)./(1-cosd(theta).*exp(-TR.*R1))...
+    .*exp(1i.* (field * TE + PhaseOffset)) .*exp(-TE.*(R2+(Drpos).*abs(Chipos)+(Drneg).*abs(Chineg))));
+    sigHR(isnan(sigHR))=0;
+end 
 
 
 % Parameters for Gaussian noise 
