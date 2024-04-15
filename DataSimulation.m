@@ -7,7 +7,6 @@
 % Chiposmap_file- 3D positive susceptibility map
 % Chinegmap_file- 3D negative susceptibility map
 % R1map_file- 3D R1 map (1/T1).
-% R2starmap_file- 3D R2star map (1/T2star).
 % M0map_file- 3D Net magnetization map (M0).             
 % Segmentation_file- 3D brain segmentation file.         
 % BrainMask_file- 3D maks of ROI.
@@ -30,7 +29,6 @@
 %% Sequence protocol for simulation
 
 ModelParams.R1map_file = 'data/maps/R1.nii.gz';
-ModelParams.R2starmap_file = 'data/maps/R2star.nii.gz';
 ModelParams.M0map_file = 'data/maps/M0.nii.gz';
 ModelParams.Segmentation_file = 'data/masks/SegmentedModel.nii.gz';
 ModelParams.BrainMask_file = 'data/masks/BrainMask.nii.gz';
