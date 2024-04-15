@@ -3,7 +3,6 @@ function DataSimulationFunction(ModelParams,SeqParams,SimParams)
 Sufix(1).name='BrainExtracted';
 Sufix(2).name='';
 savedata = 1;
-B0=7;
 B0_dir=[0 0 1];
 gyro = 42.57747892;
 modelname = SimParams.Output_dir ;
