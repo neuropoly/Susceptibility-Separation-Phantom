@@ -73,6 +73,14 @@ sigHR = M0.*(1-exp(-TR.*R1)).*sind(theta)./(1-cosd(theta).*exp(-TR.*R1))...
 sigHR(isnan(sigHR))=0;
 
 
+% Parameters for Gaussian noise 
+%mean_val = 0;     % Mean of the Gaussian noise
+%std_dev = 20;    % Standard deviation of the Gaussian noise
 
+% Generate Gaussian noise with the same style
+%noise = normrnd(mean_val, std_dev, size(sigHR1));
+
+% Add Gaussian noise to the signal
+%sigHR= sigHR1 + noise
 
 
