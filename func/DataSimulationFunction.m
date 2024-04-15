@@ -99,7 +99,7 @@ modelname = SimParams.Output_dir ;
             TissueParam.PhaseOffset = PhaseOffset;             
             TissueParam.res = voxel_size;
            
-            [sigHR]= GRESimulation(SequenceParam,TissueParam); 
+            [sigHR]= GRESimulation(SequenceParam,TissueParam,SimParams); 
              
             if savedata == 1
                 save_nii(make_nii(abs(sigHR),voxel_size),[FolderHR,'Magnitude_TE',num2str(TE*1000,'%03.f'),Sufix(BackGroundFieldRemoval).name,'.nii.gz'])
