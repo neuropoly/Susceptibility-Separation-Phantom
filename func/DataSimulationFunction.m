@@ -12,7 +12,6 @@ modelname = SimParams.Output_dir ;
 
         M0=load_nii(ModelParams.M0map_file);
         R1=load_nii(ModelParams.R1map_file);
-        R2star=load_nii(ModelParams.R2starmap_file);
         chi0=load_nii(ModelParams.Chimap_file);
         Brain=load_nii(ModelParams.BrainMask_file);
         Brain=Brain.img;
@@ -90,8 +89,7 @@ modelname = SimParams.Output_dir ;
                 SequenceParam.res=[1 1 1 ];             
             end
             TissueParam.M0=double(M0.img);              
-            TissueParam.R1=double(R1.img);                   
-            TissueParam.R2star=R2star.img;                 
+            TissueParam.R1=double(R1.img);                                    
             TissueParam.field=field * SimParams.B0 * gyro*2*pi;                  
             TissueParam.R2=R2.img; 
             TissueParam.Drpos=Drpos.img; 
