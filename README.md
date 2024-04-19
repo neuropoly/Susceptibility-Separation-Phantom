@@ -72,7 +72,7 @@ Finally, our phantom allows us to simulate a transversal relaxation time $R_2$ m
 
 
 ### Gradient echo simulation:
-The created phantom can be used to simulate gradient-echo (GRE) data using the following equation:
+The created phantom can be used to simulate gradient-echo (GRE) data (3T or 7T) using the following equation:
  
 $$S=M_0\sin(\alpha)\frac{1-e^{-TR.R_1}}{1-\cos(\alpha)e^{-TR.R_1}}e^{-TE.(R_2+D_r(|\chi^+|+|\chi^-|))+i(\Phi_0+2\pi{\gamma}TE.B_0(D(\chi^++\chi^-)))}$$
 
