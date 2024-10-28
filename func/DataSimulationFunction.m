@@ -104,8 +104,7 @@ modelname = SimParams.Output_dir ;
                 save_nii(make_nii(abs(sigHR),voxel_size),[FolderHR,'Magnitude_TE',num2str(TE*1000,'%03.f'),Sufix(BackGroundFieldRemoval).name,'.nii.gz'])
                 save_nii(make_nii(angle(sigHR),voxel_size),[FolderHR,'Phase_TE',num2str(TE*1000,'%03.f'),Sufix(BackGroundFieldRemoval).name,'.nii.gz'])
             end
-            %Mask([FolderHR,'Magnitude_TE',num2str(TE*1000,'%03.f'),Sufix(BackGroundFieldRemoval).name,'.nii.gz']);
-            %Mask([FolderHR,'Phase_TE',num2str(TE*1000,'%03.f'),Sufix(BackGroundFieldRemoval).name,'.nii.gz']);
+            
         end
       
         
@@ -114,6 +113,11 @@ modelname = SimParams.Output_dir ;
 magnitude_files = cell(1, length(SeqParams.TE));
 phase_files = cell(1, length(SeqParams.TE));
 
+% Initialize cell arrays to store the magnitude and phase data
+magnitude_echoes = cell(1, length(SeqParams.TE));
+phase_echoes = cell(1, length(SeqParams.TE));
+
+% Load NIfTI images for each echo dynamically based on the number of echoes
 for i = 1:length(SeqParams.TE)
     TE_str = num2str(SeqParams.TE(i) * 1000, '%03.f');
 
@@ -127,9 +131,13 @@ for i = 1:length(SeqParams.TE)
 end
 
 % Extract the image data and dimensions for magnitude echoes
-data_magnitude = double(magnitude_echoes{1}.img);
-% Concatenate the data by grouping the echoes
-grouped_data_magnitude = cat(4, data_magnitude, double(magnitude_echoes{2}.img), double(magnitude_echoes{3}.img), double(magnitude_echoes{4}.img));
+data_magnitude = double(magnitude_echoes{1}.img);  % Start with the first echo
+
+% Dynamically concatenate the data based on the number of echoes
+grouped_data_magnitude = data_magnitude;  % Initialize with the first echo
+for i = 2:length(magnitude_echoes)
+    grouped_data_magnitude = cat(4, grouped_data_magnitude, double(magnitude_echoes{i}.img));
+end
 
 % Create a new NIfTI image using the grouped data
 grouped_nii_magnitude = make_nii(grouped_data_magnitude, magnitude_echoes{1}.hdr.dime.pixdim(2:4), [], 64);
@@ -138,15 +146,16 @@ grouped_nii_magnitude = make_nii(grouped_data_magnitude, magnitude_echoes{1}.hdr
 save_nii(grouped_nii_magnitude, 'Simdata/Simulation_Results/SimulatedHR/Magnitude_data.nii.gz');
 
 % Extract the image data and dimensions for phase echoes
-data_phase = double(phase_echoes{1}.img);
-% Concatenate the data by grouping the echoes
-grouped_data_phase = cat(4, data_phase, double(phase_echoes{2}.img), double(phase_echoes{3}.img), double(phase_echoes{4}.img));
+data_phase = double(phase_echoes{1}.img);  % Start with the first echo
+
+% Dynamically concatenate the data based on the number of echoes
+grouped_data_phase = data_phase;  % Initialize with the first echo
+for i = 2:length(phase_echoes)
+    grouped_data_phase = cat(4, grouped_data_phase, double(phase_echoes{i}.img));
+end
 
 % Create a new NIfTI image using the grouped data
 grouped_nii_phase = make_nii(grouped_data_phase, phase_echoes{1}.hdr.dime.pixdim(2:4), [], 64);
 
 % Save the new NIfTI image to a file
 save_nii(grouped_nii_phase, 'Simdata/Simulation_Results/SimulatedHR/Phase_data.nii.gz');
-
-    save( [ modelname, '/SimulationParameters.mat'],'ModelParams','SeqParams','SimParams')
- 
