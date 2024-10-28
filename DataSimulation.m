@@ -25,6 +25,11 @@
 %
 % Output_dir- Path to results ( 4D Simulated GRE magnitude and phase)
 %%%%%%%%%%%%%%%%%%%%% VARIABLES %%%%%%%%%%%%%%%%%%%%%%%%
+%% Create Dr+ and Dr-
+input_nifti_path = 'data/masks/SegmentedModel.nii.gz';
+angle_nifti_path = 'data/maps/theta.nii.gz';
+
+[Dr_pos_file, Dr_neg_variable_file, Dr_neg_constant_file] = calculate_Dr(input_nifti_path, angle_nifti_path);
 
 %% Sequence protocol for simulation
 
