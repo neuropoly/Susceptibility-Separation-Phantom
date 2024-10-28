@@ -1,4 +1,11 @@
 # <div align="center">**Susceptibility-separation-phantom**</div>
+## 🚀 **New Update Available!** 🚀
+**:red_circle: The latest version introduces an all-new, user-friendly GUI for an enhanced experience!**
+
+Get started with our updated GUI for streamlined phantom creation and data simulation, making your workflow faster and more accessible!
+
+---
+
 ### Theory:
 This repository can create an in-silico brain phantom containing positive and negative magnetic susceptibility ($\chi^+$ and $\chi^-$) values, where $\chi^+$ and $\chi^-$ represent the iron and myelin susceptibility contribution to the total susceptibility. The code to simulate $\chi^+$ and $\chi^-$ maps is based on an extension to the [QSM validation phantom](https://data.ru.nl/collections/di/dccn/DSC_3015069.02_542?0) $^1$ developed for the second QSM reconstruction challenge $^1$. Our phantom offers the option of considering the anisotropic nature of WM susceptibility, i.e., its orientation-dependent behavior relative to the main magnetic field. 
 
@@ -129,6 +136,25 @@ All the resulting maps are available in the repository as essential reference po
 
 ![Screenshot 2023-12-17 145333](https://github.com/neuropoly/Susceptibility-Separation-Phantom/assets/77506715/cdc0ed98-ee0e-4a15-938a-2a0491cd6c9d)
 
+## GUI
+![Picture1](https://github.com/user-attachments/assets/e3c0cf30-6d2c-46c5-b339-fb5399a1cc36)
+
+### Features
+1. **Phantom Creation and Map Generation**:
+   - Easily create susceptibility phantoms and generate maps using an intuitive interface.
+   - Select between **3T** and **7T** for $\( B_0 \)$ field strength.
+   - Option to include or exclude **susceptibility anisotropy** with a simple checkbox.
+   
+2. **Data Simulation**:
+   - Customize **TR** (Repetition Time), **Flip Angle**, **Number of Echoes**, and **TE** (Echo Time).
+   - Visualize simulated data across different echoes with a dropdown menu.
+   
+3. **Visualization**:
+   - Change the color scheme of all maps through an accessible dropdown list.
+   - Adjust the **intensity range** for better contrast.
+   - Display all slices in the maps for detailed examination.
+
+The GUI facilitates faster workflows. Ideal for users interested in experimenting with different settings and visualizing results directly.
 
 ### Question:
 If you have any questions or encounter issues, please don't hesitate to open an issue, and we will respond as soon as possible to assist you.
