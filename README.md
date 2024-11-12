@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+[![launch binder](https://mybinder.org/badge_logo.svg)]()
 # <div align="center">**Susceptibility-separation-phantom**</div>
 ## 🚀 **New Update Available!** 🚀
 **:red_circle: The latest version introduces an all-new, user-friendly GUI for an enhanced experience!**
