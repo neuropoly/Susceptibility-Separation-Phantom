@@ -70,20 +70,20 @@ function T2_simulation(seg_file, T2_star_file, M0_file, T2_uniform_file, R2_file
     R2 = (1 ./ T2_with_variations_smoothed) * 1000;
     R2(isnan(R2)) = 0;
     R2(isinf(R2)) = 0;
-    R2(R2 > 100) = 0;
+    R2(R2 > 300) = 0;
 
     % Save the R2 map as a NIfTI file
     R2_with_variations_smoothed_img = make_nii(R2, T2_img.hdr.dime.pixdim(2:4), [], 64);
     save_nii(R2_with_variations_smoothed_img, R2_file);
-        % Calculate R2_3T as 0.65 * R2
-    R2_3T = R2 * 0.65;
+        % Calculate T2_3T 
+    T2_3T = T2_with_variations_smoothed / 0.65;
 
     % Save the R2_3T map as a NIfTI file
-    R2_3T_img = make_nii(R2_3T, T2_img.hdr.dime.pixdim(2:4), [], 64);
-    save_nii(R2_3T_img,'data/maps/R2_3T.nii.gz' );
+    T2_3T_img = make_nii(T2_3T, T2_img.hdr.dime.pixdim(2:4), [], 64);
+    save_nii(T2_3T_img,'data/maps/T2_3T.nii.gz' );
 
 
     % Apply mask (assuming Mask function is provided)
     Mask(R2_file);
-    Mask('data/maps/R2_3T.nii.gz');
+    Mask('data/maps/T2_3T.nii.gz');
 end
