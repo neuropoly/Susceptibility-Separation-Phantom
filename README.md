@@ -76,18 +76,18 @@ The final susceptibility values after applying a realistic intensity modulation 
 Finally, our phantom allows us to simulate a transversal relaxation time $R_2$ map $\(\frac{1}{T_2}\)$. This map was also simulated based on literature values $^{8,9}$ (Table 3) and then weighed using $R^{\*}_ {2}$ and $M_0$ to create realistic tissue textures.
 
 
-| Region           | $T_2$ (ms) |
+| Region           | $T_2^{3T}$ (ms) |
 | ---------------- | --------------------- | 
-| Caudate nucleus  | 57.46               | 
-| Globus pallidus  | 41.47                |
-| Putamen          | 50.44                | 
-| Red nucleus      | 44.07                  | 
-| Dentate nucleus   | 71.71                | 
-| Substantia nigra | 47.26                | 
-| Thalamus         | 56.62                 | 
-| White matter     | 45.54                | 
-| Grey matter      | 84.71                 | 
-| CSF              | 1029                | 
+| Caudate nucleus  | 88.4               | 
+| Globus pallidus  | 63.8                |
+| Putamen          | 77.6                | 
+| Red nucleus      | 67.8                  | 
+| Dentate nucleus   | 110.28                | 
+| Substantia nigra | 72.7                | 
+| Thalamus         | 87.1                 | 
+| White matter     | 70                | 
+| Grey matter      | 130.45                 | 
+| CSF              | 1584                | 
 
 **Table 3:**  Simulated average $T_2$ values derived from the literature for different regions of the brain.
 
