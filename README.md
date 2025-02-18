@@ -1,4 +1,4 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IvLcViF-iAGVLju8UeS31dRKSUZ16o5V#scrollTo=FlZyNqld-_Zv)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
 
 # <div align="center">**Susceptibility-separation-phantom**</div>
 ## 🚀 **New Update Available!** 🚀
