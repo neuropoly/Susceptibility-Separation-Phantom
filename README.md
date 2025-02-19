@@ -1,4 +1,4 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/neuropoly/Susceptibility-Separation-Phantom/blob/main/Manuscript_Figures.ipynb
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/neuropoly/Susceptibility-Separation-Phantom/Manuscript_Figures.ipynb
 )
 
 # <div align="center">**Susceptibility-separation-phantom**</div>
