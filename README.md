@@ -100,7 +100,7 @@ $$S=M_0\sin(\alpha)\frac{1-e^{-TR.R_1}}{1-\cos(\alpha)e^{-TR.R_1}}e^{-TE.(R_2+D_
 where D is the magnetic dipole kernel, $\alpha$ is the flip angle, TR is the repetition time, TE is the echo time, $\Phi_0$ is a phase offset, $M_0$ is the net magnetization, $B_0$ is the field strength, 
 ${\gamma}$ is the gyromagnetic ratio, and $D_r$ maps represents the proportionality between $R^{\'}_ {2}$ $(=R^{\*}_ {2}-R_ 2)$ and absolute susceptibility. $D_r$ was modeled as $\tfrac{2\pi}{9\sqrt{3}}{\gamma}B_0$ in gray matter and as $\tfrac{1}{2}\gamma B_0sin^2(\theta)$ in white matter.
 
-The phantom and accompanying code can be used to simulate MR signals and evaluate various magnetic susceptibility-separation techniques, such as [&chi;-separation](https://github.com/SNU-LIST/chi-separation) $^{10}$, [APART-QSM](https://github.com/AMRI-Lab/APART-QSM) $^{11}$, DECOMPOSE QSM $^{12}$, R2*-QSM $^{13}$.
+The phantom and accompanying code can be used to simulate MR signals and evaluate various magnetic susceptibility-separation techniques, such as [&chi;-separation](https://github.com/SNU-LIST/chi-separation) $^{10}$, [APART-QSM](https://github.com/AMRI-Lab/APART-QSM) $^{11}$, DECOMPOSE QSM $^{12}$, or R2*-QSM $^{13}$.
 
 ### Requirements:
 
