@@ -100,7 +100,7 @@ $$S=M_0\sin(\alpha)\frac{1-e^{-TR.R_1}}{1-\cos(\alpha)e^{-TR.R_1}}e^{-TE.(R_2+D_
 where D is the magnetic dipole kernel, $\alpha$ is the flip angle, TR is the repetition time, TE is the echo time, $\Phi_0$ is a phase offset, $M_0$ is the net magnetization, $B_0$ is the field strength, 
 ${\gamma}$ is the gyromagnetic ratio, and $D_r$ maps represents the proportionality between $R^{\'}_ {2}$ $(=R^{\*}_ {2}-R_ 2)$ and absolute susceptibility. $D_r$ was modeled as $\tfrac{2\pi}{9\sqrt{3}}{\gamma}B_0$ in gray matter and as $\tfrac{1}{2}\gamma B_0sin^2(\theta)$ in white matter.
 
-The phantom and accompanying code can be used to simulate MR signals and evaluate various magnetic susceptibility-separation techniques, such as [&chi;-separation](https://github.com/SNU-LIST/chi-separation) $^{10}$, [APART-QSM](https://github.com/AMRI-Lab/APART-QSM) $^{11}$,R2*-QSM, or DECOMPOSE QSM $^{12}$.
+The phantom and accompanying code can be used to simulate MR signals and evaluate various magnetic susceptibility-separation techniques, such as [&chi;-separation](https://github.com/SNU-LIST/chi-separation) $^{10}$, [APART-QSM](https://github.com/AMRI-Lab/APART-QSM) $^{11}$, DECOMPOSE QSM $^{12}$, R2*-QSM $^{13}$.
 
 ### Requirements:
 
@@ -188,6 +188,7 @@ If you have any questions or encounter issues, please don't hesitate to open an 
 10.	Shin, H.-G. et al. χ-separation: Magnetic susceptibility source separation toward iron and myelin mapping in the brain. Neuroimage 240, 118371 (2021).
 11.	Li, Z. et al. APART-QSM: An improved sub-voxel quantitative susceptibility mapping for susceptibility source separation using an iterative data fitting method. Neuroimage 274, 120148 (2023).
 12.	Chen, J., Gong, N.-J., Chaim, K. T., Otaduy, M. C. G. & Liu, C. Decompose quantitative susceptibility mapping (QSM) to sub-voxel diamagnetic and paramagnetic components based on gradient-echo MRI data. Neuroimage 242, 118477 (2021).
+13.	Dimov, Alexey V., et al. "Susceptibility source separation from gradient echo data using magnitude decay modeling." Journal of Neuroimaging 32.5 (2022): 852-859.
 
 
 
