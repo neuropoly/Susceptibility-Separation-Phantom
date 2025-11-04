@@ -141,8 +141,8 @@ percentile_value_in_region_r1 = mean(R1_data(region_mask));
 percentage_mask_r1 = region_mask .* (R1_data / percentile_value_in_region_r1);
 
 % Define the mean and standard deviation values for Gaussian noise
-mean_val = -0.04;
-std_dev = 0.05;
+mean_val = 0;
+std_dev = 0.01;
 
 % Initialize Xapp_masked_data as Xapp_data for the first iteration
 Xapp_masked_data = Xapp_data;
@@ -206,3 +206,4 @@ seg_file = 'data/masks/SegmentedModel.nii.gz';
 
 % Call the 3T_simulation function
 Map_creation_3T(R2_file, R2star_file, R1_file, seg_file);
+
