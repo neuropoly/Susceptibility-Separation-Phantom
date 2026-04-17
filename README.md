@@ -173,6 +173,10 @@ The GUI facilitates faster workflows. Ideal for users interested in experimentin
 ### Question:
 If you have any questions or encounter issues, please don't hesitate to open an issue, and we will respond as soon as possible to assist you.
 
+### Preprint citation
+
+Ridani D, De Leener B, Alonso-Ortiz E. A realistic in-silico brain phantom for quantifying susceptibility anisotropy-induced error in susceptibility separation. bioRxiv. April 2026:2026.04.07.716972. doi:10.64898/2026.04.07.716972
+
 
 ### References:
 
